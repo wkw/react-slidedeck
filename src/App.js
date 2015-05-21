@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Deck from './components/Deck';
 import Slide from './components/Slide';
+import slides from './slides/index';
 import './normalize.less';
 
 export default class App extends Component {
@@ -23,7 +24,7 @@ export default class App extends Component {
       break;
     case 39:
       this.setState({
-        currentSlide: this.state.currentSlide + 1
+        currentSlide: Math.min(this.state.currentSlide + 1, slides.length - 1)
       });
       break;
     }
@@ -34,14 +35,15 @@ export default class App extends Component {
     return (
       <div>
         <Deck currentSlide={currentSlide}>
-          <Slide>
-            First.
-          </Slide>
-          <Slide>
-            Second.
-          </Slide>
+          {this.renderSlides()}
         </Deck>
       </div>
+    );
+  }
+
+  renderSlides() {
+    return slides.map((content, index) =>
+      <Slide key={index}>{content}</Slide>
     );
   }
 }
