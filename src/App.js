@@ -1,9 +1,12 @@
 import React from 'react';
+import Slide from './components/Slide';
 
 export default class App {
   render() {
     return (
-      <h1>Hey.</h1>
+      <div>
+        <Slide />
+      </div>
     );
   }
 }
