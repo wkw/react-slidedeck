@@ -15,7 +15,7 @@ export default class Deck {
              style={{
                width: `${Children.count(children) * 100}vw`,
                transform: `translate(${-currentSlide * 100}vw, 0)`,
-               transition: 'all .1s ease-out'
+               transition: 'all .25s ease-out'
              }}>
           {Children.map(children, this.wrapChild)}
         </div>
