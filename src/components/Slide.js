@@ -5,7 +5,7 @@ export default class Slide {
   render() {
     return (
       <div className='Slide'>
-        Hey.
+        {this.props.children}
       </div>
     );
   }
